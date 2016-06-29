@@ -10,14 +10,14 @@ function treeToRoutes(tree, root, ctx, level = '') {
   if (tree.children) {
     tree.children.forEach(child => {
       const file = child.path.replace(root, ctx)
-      const path = child.name.replace(/\..+$/, '')
+      const uri = child.name.replace(/\..+$/, '')
 
       if (child.children) {
-        route.childRoutes.push(treeToRoutes(child, root, ctx, path))
+        route.childRoutes.push(treeToRoutes(child, root, ctx, uri))
       } else {
         const component = { file }
 
-        switch (path) {
+        switch (uri) {
           case '_layout':
             route.component = component
             break
@@ -28,7 +28,7 @@ function treeToRoutes(tree, root, ctx, level = '') {
             route.childRoutes.push({ component, path: '*' })
             break
           default:
-            route.childRoutes.push({ path, component })
+            route.childRoutes.push({ path: uri, component })
             break
         }
       }
@@ -79,8 +79,16 @@ function reactRouterRoutes(routes) {
     return v
   }, 2).replace(/(\s+)"(component|indexRoute)": (".+")/g, (match, whitespace, type, file) => {
     const indent = whitespace.replace('\n', '')
-    const loaderFn = type === 'component' ? 'getComponent' : 'getIndexRoute'
-    const loaderCb = type === 'component' ? 'cb(null, page.default || page)' : 'cb(null, { component: page.default || page })'
+
+    let loaderFn
+    let loaderCb
+    if (type === 'component') {
+      loaderFn = 'getComponent'
+      loaderCb = 'cb(null, page.default || page)'
+    } else {
+      loaderFn = 'getIndexRoute'
+      loaderCb = 'cb(null, { component: page.default || page })'
+    }
 
     return `${whitespace}${loaderFn}(nextState, cb) {
 ${indent}  System.import(${file})

@@ -45,7 +45,10 @@ test('react-router routes', t => {
 })
 
 test('no child routes', t => {
-  const loaderContext = new LoaderMock({ query: '?raw', resource: 'fixtures/site/product/details/index.js' })
+  const loaderContext = new LoaderMock({
+    query: '?raw',
+    resource: 'fixtures/site/product/details/index.js',
+  })
   const routes = eval(loader.call(loaderContext)) /* eslint no-eval: 0 */
   t.is(routes.childRoutes.length, 2)
   t.is(routes.childRoutes[0].path, 'x')
