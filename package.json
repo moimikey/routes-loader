@@ -7,6 +7,7 @@
     "test": "NODE_ENV=test nyc ava",
     "test:watch": "NODE_ENV=test ava --watch",
     "eslint": "eslint .",
+    "test-and-lint": "npm run test && npm run eslint",
     "coverage": "nyc report --reporter=text-lcov",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
