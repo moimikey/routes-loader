@@ -1,0 +1,46 @@
+[
+  {
+    "path": "/",
+    "file": "site/index.js"
+  },
+  {
+    "path": "/404",
+    "file": "site/404.js"
+  },
+  {
+    "path": "/about",
+    "file": "site/about.txt"
+  },
+  {
+    "path": "/contact",
+    "file": "site/contact.js"
+  },
+  {
+    "path": "/product",
+    "file": "site/product/index.js"
+  },
+  {
+    "path": "/product/404",
+    "file": "site/product/404.js"
+  },
+  {
+    "path": "/product/a",
+    "file": "site/product/a.js"
+  },
+  {
+    "path": "/product/b",
+    "file": "site/product/b.js"
+  },
+  {
+    "path": "/product/details",
+    "file": "site/product/details/index.js"
+  },
+  {
+    "path": "/product/details/x",
+    "file": "site/product/details/x.md"
+  },
+  {
+    "path": "/product/details/y",
+    "file": "site/product/details/y.md"
+  }
+]

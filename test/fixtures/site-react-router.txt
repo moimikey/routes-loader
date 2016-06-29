@@ -1,0 +1,91 @@
+module.exports = {
+  "path": "/",
+  "childRoutes": [
+    {
+      getComponent(nextState, cb) {
+        System.import("site/404.js")
+          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+      },
+      "path": "*"
+    },
+    {
+      "path": "about",
+      getComponent(nextState, cb) {
+        System.import("site/about.txt")
+          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+      }
+    },
+    {
+      "path": "contact",
+      getComponent(nextState, cb) {
+        System.import("site/contact.js")
+          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+      }
+    },
+    {
+      "path": "product",
+      "childRoutes": [
+        {
+          getComponent(nextState, cb) {
+            System.import("site/product/404.js")
+              .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+          },
+          "path": "*"
+        },
+        {
+          "path": "a",
+          getComponent(nextState, cb) {
+            System.import("site/product/a.js")
+              .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+          }
+        },
+        {
+          "path": "b",
+          getComponent(nextState, cb) {
+            System.import("site/product/b.js")
+              .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+          }
+        },
+        {
+          "path": "details",
+          "childRoutes": [
+            {
+              "path": "x",
+              getComponent(nextState, cb) {
+                System.import("site/product/details/x.md")
+                  .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+              }
+            },
+            {
+              "path": "y",
+              getComponent(nextState, cb) {
+                System.import("site/product/details/y.md")
+                  .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+              }
+            }
+          ],
+          getIndexRoute(nextState, cb) {
+            System.import("site/product/details/index.js")
+              .then(page => { cb(null, { component: page.default || page }) }, error => { cb(error, null) })
+          }
+        }
+      ],
+      getComponent(nextState, cb) {
+        System.import("site/product/_layout.js")
+          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+      },
+      getIndexRoute(nextState, cb) {
+        System.import("site/product/index.js")
+          .then(page => { cb(null, { component: page.default || page }) }, error => { cb(error, null) })
+      }
+    }
+  ],
+  getComponent(nextState, cb) {
+    System.import("site/_layout.js")
+      .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+  },
+  getIndexRoute(nextState, cb) {
+    System.import("site/index.js")
+      .then(page => { cb(null, { component: page.default || page }) }, error => { cb(error, null) })
+  }
+}

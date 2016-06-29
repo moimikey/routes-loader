@@ -1,0 +1,78 @@
+{
+  "path": "/",
+  "childRoutes": [
+    {
+      "path": "*",
+      "component": {
+        "file": "site/404.js"
+      }
+    },
+    {
+      "path": "about",
+      "component": {
+        "file": "site/about.txt"
+      }
+    },
+    {
+      "path": "contact",
+      "component": {
+        "file": "site/contact.js"
+      }
+    },
+    {
+      "path": "product",
+      "childRoutes": [
+        {
+          "path": "*",
+          "component": {
+            "file": "site/product/404.js"
+          }
+        },
+        {
+          "path": "a",
+          "component": {
+            "file": "site/product/a.js"
+          }
+        },
+        {
+          "path": "b",
+          "component": {
+            "file": "site/product/b.js"
+          }
+        },
+        {
+          "path": "details",
+          "childRoutes": [
+            {
+              "path": "x",
+              "component": {
+                "file": "site/product/details/x.md"
+              }
+            },
+            {
+              "path": "y",
+              "component": {
+                "file": "site/product/details/y.md"
+              }
+            }
+          ],
+          "indexRoute": {
+            "file": "site/product/details/index.js"
+          }
+        }
+      ],
+      "component": {
+        "file": "site/product/_layout.js"
+      },
+      "indexRoute": {
+        "file": "site/product/index.js"
+      }
+    }
+  ],
+  "component": {
+    "file": "site/_layout.js"
+  },
+  "indexRoute": {
+    "file": "site/index.js"
+  }
+}
