@@ -1,6 +1,6 @@
 {
   "name": "routes-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Auto generate routes from a directory structure",
   "main": "routes-loader.js",
   "scripts": {
@@ -12,15 +12,6 @@
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
   },
-  "keywords": [
-    "webpack",
-    "routes",
-    "react-router",
-    "loader"
-  ],
-  "author": "adoppler",
-  "license": "MIT",
-  "homepage": "https://github.com/adoppler/routes-loader#readme",
   "devDependencies": {
     "ava": "^0.15.2",
     "babel-eslint": "^6.1.0",
@@ -36,5 +27,18 @@
   },
   "peerDependencies": {
     "webpack": "^2.1.0-beta.0"
-  }
+  },
+  "author": "adoppler",
+  "license": "MIT",
+  "homepage": "https://github.com/adoppler/routes-loader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adoppler/routes-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "routes",
+    "react-router",
+    "loader"
+  ]
 }
