@@ -14,7 +14,7 @@ function treeToRoutes(tree, root, ctx, level = '') {
 
       if (child.children) {
         route.childRoutes.push(treeToRoutes(child, root, ctx, uri))
-      } else {
+      } else if (file.match(/\.(js|jsx|coffee|cjsx|es|es6|html|markdown|mdown|md|txt|text)$/)) {
         const component = { file }
 
         switch (uri) {
@@ -107,7 +107,7 @@ function transformResult(routes, query) {
   return reactRouterRoutes(routes)
 }
 
-module.exports = function ReactRouterRoutesLoader() {
+module.exports = function RoutesLoader() {
   const root = path.join(this.resourcePath, '..')
 
   const tree = dtree(root)
