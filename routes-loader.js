@@ -44,17 +44,22 @@ function routeList(routes) {
     const parent = uri === '/' ? '' : uri
 
     if (route.childRoutes) {
-      const index = {
-        path: uri,
-        file: route.indexRoute.file,
+      let index
+      if (route.indexRoute) {
+        index = {
+          path: uri,
+          file: route.indexRoute.file,
+        }
       }
+
       const children = route.childRoutes.map(reduceRoutes.bind(null, list)).map(child =>
         child.map(c => ({
           path: `${parent}/${c.path}`,
           file: c.file,
         }))
       )
-      return [].concat.apply([index], children)
+
+      return [].concat.apply(index ? [index] : [], children)
     }
 
     if (uri === '*') {

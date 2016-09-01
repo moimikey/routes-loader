@@ -53,3 +53,19 @@ test('no child routes', t => {
   t.is(routes.childRoutes.length, 2)
   t.is(routes.childRoutes[0].path, 'x')
 })
+
+test('no index file', t => {
+  const loaderContext = new LoaderMock({ query: '?list', resource: 'fixtures/no-index/index.js' })
+  const routes = eval(loader.call(loaderContext)) /* eslint no-eval: 0 */
+
+  t.deepEqual(routes, [
+    {
+      path: '/',
+      file: 'site/index.js'
+    },
+    {
+      path: '/a/b',
+      file: 'site/a/b.js'
+    },
+  ])
+})
