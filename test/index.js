@@ -61,11 +61,11 @@ test('no index file', t => {
   t.deepEqual(routes, [
     {
       path: '/',
-      file: 'site/index.js'
+      file: 'site/index.js',
     },
     {
       path: '/a/b',
-      file: 'site/a/b.js'
+      file: 'site/a/b.js',
     },
   ])
 })
