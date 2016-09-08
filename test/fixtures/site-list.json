@@ -4,10 +4,6 @@
     "file": "site/index.js"
   },
   {
-    "path": "/404",
-    "file": "site/404.js"
-  },
-  {
     "path": "/about",
     "file": "site/about.txt"
   },
@@ -18,10 +14,6 @@
   {
     "path": "/product",
     "file": "site/product/index.js"
-  },
-  {
-    "path": "/product/404",
-    "file": "site/product/404.js"
   },
   {
     "path": "/product/a",
@@ -42,5 +34,13 @@
   {
     "path": "/product/details/y",
     "file": "site/product/details/y.md"
+  },
+  {
+    "path": "/product/404",
+    "file": "site/product/404.js"
+  },
+  {
+    "path": "/404",
+    "file": "site/404.js"
   }
 ]

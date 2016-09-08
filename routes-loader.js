@@ -35,6 +35,15 @@ function treeToRoutes(tree, root, ctx, level = '') {
     })
   }
 
+  route.childRoutes.sort((a, b) => {
+    if (a.path === '*') {
+      return 1
+    } else if (b.path === '*') {
+      return -1
+    }
+    return 0
+  })
+
   return route
 }
 

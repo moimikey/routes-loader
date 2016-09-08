@@ -2,13 +2,6 @@ module.exports = {
   "path": "/",
   "childRoutes": [
     {
-      getComponent(nextState, cb) {
-        System.import("site/404.js")
-          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
-      },
-      "path": "*"
-    },
-    {
       "path": "about",
       getComponent(nextState, cb) {
         System.import("site/about.txt")
@@ -25,13 +18,6 @@ module.exports = {
     {
       "path": "product",
       "childRoutes": [
-        {
-          getComponent(nextState, cb) {
-            System.import("site/product/404.js")
-              .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
-          },
-          "path": "*"
-        },
         {
           "path": "a",
           getComponent(nextState, cb) {
@@ -68,6 +54,13 @@ module.exports = {
             System.import("site/product/details/index.js")
               .then(page => { cb(null, { component: page.default || page }) }, error => { cb(error, null) })
           }
+        },
+        {
+          getComponent(nextState, cb) {
+            System.import("site/product/404.js")
+              .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+          },
+          "path": "*"
         }
       ],
       getComponent(nextState, cb) {
@@ -78,6 +71,13 @@ module.exports = {
         System.import("site/product/index.js")
           .then(page => { cb(null, { component: page.default || page }) }, error => { cb(error, null) })
       }
+    },
+    {
+      getComponent(nextState, cb) {
+        System.import("site/404.js")
+          .then(page => { cb(null, page.default || page) }, error => { cb(error, null) })
+      },
+      "path": "*"
     }
   ],
   getComponent(nextState, cb) {

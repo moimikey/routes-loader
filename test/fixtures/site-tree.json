@@ -2,12 +2,6 @@
   "path": "/",
   "childRoutes": [
     {
-      "path": "*",
-      "component": {
-        "file": "site/404.js"
-      }
-    },
-    {
       "path": "about",
       "component": {
         "file": "site/about.txt"
@@ -22,12 +16,6 @@
     {
       "path": "product",
       "childRoutes": [
-        {
-          "path": "*",
-          "component": {
-            "file": "site/product/404.js"
-          }
-        },
         {
           "path": "a",
           "component": {
@@ -59,6 +47,12 @@
           "indexRoute": {
             "file": "site/product/details/index.js"
           }
+        },
+        {
+          "path": "*",
+          "component": {
+            "file": "site/product/404.js"
+          }
         }
       ],
       "component": {
@@ -66,6 +60,12 @@
       },
       "indexRoute": {
         "file": "site/product/index.js"
+      }
+    },
+    {
+      "path": "*",
+      "component": {
+        "file": "site/404.js"
       }
     }
   ],
