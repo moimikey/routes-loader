@@ -1,6 +1,6 @@
 {
   "name": "routes-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Auto generate routes from a directory structure",
   "main": "routes-loader.js",
   "scripts": {
