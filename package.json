@@ -19,7 +19,7 @@
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-ava": "^2.5.0",
     "eslint-plugin-import": "^1.9.2",
-    "nyc": "^6.6.1",
+    "nyc": "^15.0.0",
     "publish-please": "^2.1.4"
   },
   "dependencies": {
