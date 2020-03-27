@@ -20,7 +20,7 @@
     "eslint-plugin-ava": "^2.5.0",
     "eslint-plugin-import": "^1.9.2",
     "nyc": "^6.6.1",
-    "publish-please": "^2.1.4"
+    "publish-please": "^5.5.1"
   },
   "dependencies": {
     "directory-tree": "^1.0.0"
