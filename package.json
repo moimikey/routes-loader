@@ -23,7 +23,7 @@
     "publish-please": "^2.1.4"
   },
   "dependencies": {
-    "directory-tree": "^1.0.0"
+    "directory-tree": "^2.2.5"
   },
   "peerDependencies": {
     "webpack": "^1.0.0 || ~2.2.0-rc.0"
