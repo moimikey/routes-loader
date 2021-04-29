@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: directory-tree
+    versions:
+    - 2.2.5
+    - 2.2.6
+    - 2.2.7
+  - dependency-name: eslint-config-airbnb-base
+    versions:
+    - 14.2.0
